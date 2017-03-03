@@ -28,7 +28,7 @@ const App = function() {
   //       "li",
   //       null,
   //       "Babel"
-  //     )}
+      )}
 
 // Note: Cmd Alt i - Opens up console window in Chrome
 
