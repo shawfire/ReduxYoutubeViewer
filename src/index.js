@@ -1,35 +1,18 @@
-// Create a new compoent.
-//  This component should produce some HTML.
-const App = function() {
-  // JSX - What looks like HTML in our JavaScript
-  //  this code gets transpiled with babel to produce JS
-  //  i.e. babeljs.io/repl
-  return <ol>
-    <li>JavaScript</li>
-    <li>JSX</li>
-    <li>Babel</li>
-    </ol>;
-  // the above jsx converts to using babel:
-  //  (thus the purpose of JSX is to make your HTML legible within JS.
-  // return React.createElement(
-  //     "ol",
-  //     null,
-  //     React.createElement(
-  //       "li",
-  //       null,
-  //       "JavaScript"
-  //     ),
-  //     React.createElement(
-  //       "li",
-  //       null,
-  //       "JSX"
-  //     ),
-  //     React.createElement(
-  //       "li",
-  //       null,
-  //       "Babel"
-      )}
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
 
-// Note: Cmd Alt i - Opens up console window in Chrome
+import App from './components/app';
+import reducers from './reducers';
+
+const createStoreWithMiddleware = applyMiddleware()(createStore);
 
 // Take this component's generated HTML and put it on the page (in the DOM)
+// React is used to create and manage our components
+// While ReactDom is used to interact with the DOM.
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+  </Provider>
+  , document.querySelector('.container'));
