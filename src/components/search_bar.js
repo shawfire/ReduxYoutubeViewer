@@ -6,10 +6,10 @@ import React from 'react';
 // };
 
 // ES6 class - state
-class SearchBar extend React.Component {
+class SearchBar extends React.Component {
   render() {
     return <input />;
   }
 }
 
-export default SeachBar;
+export default SearchBar;
