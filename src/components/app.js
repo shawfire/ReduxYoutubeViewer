@@ -2,9 +2,10 @@
 //  Select console - JS tab - to see errors
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import SeachBar from './search_bar';
+import SearchBar from './search_bar';
 import YTSearch from 'youtube-api-search';
-import VideoList from './video_list'
+import VideoList from './video_list';
+import VideoDetail from './video_detail';
 const API_KEY = 'AIzaSyDsbto07LyNzMzrPG8LPycHfuJ2pdPnh8o';
 
 // Create a new compoent.
@@ -15,7 +16,6 @@ export default class App extends Component {
     this.state = { videos: [] };
 
     YTSearch({key: API_KEY, term: 'DanielShawMusicMan'}, (videos) => {
-      console.log(videos);
       this.setState({ videos });
       // this.setState({ videos: videos })
     });
@@ -27,7 +27,8 @@ export default class App extends Component {
     return (
       <div>
         <div>React Youtube Viewer</div>
-        <SeachBar />
+        <SearchBar />
+        <VideoDetail video={this.state.videos[0]} />
         <VideoList videos={this.state.videos} />
       </div>
     );
