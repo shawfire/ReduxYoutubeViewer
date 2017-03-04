@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import YTSearch from 'youtube-api-search';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-
-const API_KEY = 'AIzaSyDsbto07LyNzMzrPG8LPycHfuJ2pdPnh8o';
 
 import App from './components/app';
 import reducers from './reducers';
@@ -12,10 +9,6 @@ import reducers from './reducers';
 // Downwards data flow - the most parent component responsable for fetching it.
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
-
-YTSearch({key: API_KEY, term: 'DanielShawMusicMan'}, function(data) {
-  console.log(data);
-});
 
 // Take this component's generated HTML and put it on the page (in the DOM)
 // React is used to create and manage our components
