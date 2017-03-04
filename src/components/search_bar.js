@@ -17,7 +17,9 @@ class SearchBar extends React.Component {
     // Always use this.setState to chang the value of state outside the constructor.
     return (
       <div>
-        <input onChange={event => this.setState({term: event.target.value})} />
+        <input
+          value={this.state.term} // Controlled component
+          onChange={event => this.setState({term: event.target.value})} />
         Value of this input: {this.state.term}
       </div>
     );
