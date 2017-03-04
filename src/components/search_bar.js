@@ -7,8 +7,20 @@ import React from 'react';
 
 // ES6 class - state
 class SearchBar extends React.Component {
+  constructor(props) {
+    super(props);
+    // Only change state like this in the constructor.
+    this.state = { term: ''};
+  }
+
   render() {
-    return <input onChange={event => console.log(event.target.value)} />;
+    // Always use this.setState to chang the value of state outside the constructor.
+    return (
+      <div>
+        <input onChange={event => this.setState({term: event.target.value})} />
+        Value of this input: {this.state.term}
+      </div>
+    );
   }
 }
 
