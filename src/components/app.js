@@ -4,8 +4,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SeachBar from './search_bar';
 
-const API_KEY = 'AIzaSyDsbto07LyNzMzrPG8LPycHfuJ2pdPnh8o';
-
 // Create a new compoent.
 //  This component should produce some HTML.
 export default class App extends Component {
