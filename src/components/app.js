@@ -32,7 +32,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <div>React Youtube Viewer</div>
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
