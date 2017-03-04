@@ -1,7 +1,12 @@
 import React from 'react';
 
-const VideoListItem = (props) => {
-  return <li>Video</li>
+const VideoListItem = ({video}) => {  // ES6 syntaxs
+  // const video = props.video;
+  return (
+    <li>
+      {video.snippet.title}
+    </li>
+  );
 };
 
 export default VideoListItem;
