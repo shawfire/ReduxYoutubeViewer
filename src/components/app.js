@@ -14,9 +14,10 @@ export default class App extends Component {
     super(props);
     this.state = { videos: [] };
 
-    YTSearch({key: API_KEY, term: 'DanielShawMusicMan'}, (data) => {
-      console.log(data);
-      this.setState({ videos: data });
+    YTSearch({key: API_KEY, term: 'DanielShawMusicMan'}, (videos) => {
+      console.log(videos);
+      this.setState({ videos });
+      // this.setState({ videos: videos })
     });
   }
   // JSX - What looks like HTML in our JavaScript
