@@ -3,7 +3,12 @@ import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
   const videoItems = props.videos.map(video => {
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+      <VideoListItem
+        onVideoSelect={props.onVideoSelect}
+        key={video.etag}
+        video={video} />
+    );
   });
   // props.property for functional compoents bu this.props.perperty anywhere in a class component
   // const videos = props.videos
@@ -12,6 +17,6 @@ const VideoList = (props) => {
       {videoItems}
     </ul>
   );
-}
+};
 
 export default VideoList;
