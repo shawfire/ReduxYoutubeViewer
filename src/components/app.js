@@ -5,7 +5,6 @@ import ReactDOM from 'react-dom';
 import SeachBar from './search_bar';
 import YTSearch from 'youtube-api-search';
 import VideoList from './video_list'
-
 const API_KEY = 'AIzaSyDsbto07LyNzMzrPG8LPycHfuJ2pdPnh8o';
 
 // Create a new compoent.
