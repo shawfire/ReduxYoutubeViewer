@@ -12,6 +12,8 @@ Redux Youtube Viewer
 	project: id redux-youtube-viewer
 	// --save option directs npm to save config to package.json file
 	npm install --save youtube-api-search
+	cd ~/dev/react/ReduxYoutubeViewer
+	npm i s lodash
 
 ##Use react-devtools extension in browser (i.e. chrome of firefox)
 

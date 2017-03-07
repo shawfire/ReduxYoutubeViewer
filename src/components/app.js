@@ -1,5 +1,6 @@
 // Note: Cmd Alt i - Opens up console window in Chrome
 //  Select console - JS tab - to see errors
+import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import SearchBar from './search_bar';
@@ -17,22 +18,27 @@ export default class App extends Component {
       videos: [],
       selectedVideo: null
     };
+    this.videoSearch('DanielShawMusicMan');
+      // this.setState({ videos: videos })
+  }
 
-    YTSearch({key: API_KEY, term: 'DanielShawMusicMan'}, (videos) => {
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term}, (videos) => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       });
-      // this.setState({ videos: videos })
     });
   }
+
   // JSX - What looks like HTML in our JavaScript
   //  this code get s transpiled with babel to produce JS
   //  i.e. babeljs.io/repl
   render() {
+    const videoSearch = _.debounce(term => this.videoSearch(term), 300)
     return (
       <div>
-        <SearchBar />
+        <SearchBar onSearchTermChange={videoSearch}/>
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           onVideoSelect={selectedVideo => this.setState({selectedVideo}) }
