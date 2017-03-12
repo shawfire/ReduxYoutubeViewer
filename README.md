@@ -4,7 +4,7 @@ Redux Youtube Viewer
 
 ##Redux reference [Redux](http://redux.js.org/)
 ##React reference [React](https://facebook.github.io/react/)
-##Babel reference [Babel](babeljs.io/repl)
+##Babel reference [Babel](https://babeljs.io/repl)
 ##Wireframe software reference [Balsamiq](https://balsamiq.com/)
 
 ##Google Developer API (console.developers.google.com)
